@@ -1,0 +1,64 @@
+.stickyCards {
+  background: #faf4ed;
+  padding: 120px 0;
+}
+
+.stickyCards__wrap {
+  width: min(1200px, 100% - 60px);
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+}
+
+/* LEFT SIDE */
+.stickyCards__left {
+  display: flex;
+  flex-direction: column;
+  gap: 140px; /* ✅ gives scroll space between blocks */
+}
+
+.stickyCardText {
+  max-width: 520px;
+
+  .step {
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    opacity: 0.75;
+    margin-bottom: 16px;
+  }
+
+  h2 {
+    font-size: 1rem;
+    line-height: 1.2;
+    font-weight: 400;
+    color: #222;
+  }
+}
+
+/* OPTIONAL: highlight active text */
+.stickyCardText.active h2 {
+  color: #111;
+}
+
+/* RIGHT SIDE */
+.stickyCards__right {
+  position: relative;
+}
+
+.stickyCards__imageBox {
+  position: sticky;
+  top: 120px; /* ✅ below navbar */
+  border-radius: 22px;
+  overflow: hidden;
+}
+
+.stickyCards__imageBox img {
+  width: 100%;
+  height: 540px;
+  object-fit: cover;
+  display: block;
+  border-radius: 22px;
+}

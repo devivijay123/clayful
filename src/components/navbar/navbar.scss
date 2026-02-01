@@ -1,0 +1,294 @@
+@use "@/globalStyles/app.scss" as *;
+
+/* ===============================
+   BASE NAVBAR
+================================ */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 9999;
+  padding-top: 15px;
+  overflow: hidden;
+  transition: background-color 0.4s ease;
+}
+
+/* animated background layer */
+.navbar::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  height: 0%;
+  background: $cream;
+  transition: height 0.6s ease;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* hover animation ALWAYS works */
+.navbar:hover::before {
+  height: 100%;
+}
+
+/* keep content above animation */
+.navbar__inner {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: $maxWidth;
+  margin: 0 auto;
+  padding: 0 20px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  .logo{
+              width: 50px;
+              height: 50px;
+              @media(max-width: 600px){
+                width: 40%;
+              }
+                img{
+                    width: 100%;
+                  
+                }
+            }
+}
+
+/* divider */
+.navbar__line {
+  margin-top: 20px;
+  width: 100%;
+  height: 1px;
+  background: $cream;
+}
+
+/* ===============================
+   HERO STATE (TRANSPARENT)
+================================ */
+.navbar--transparent {
+  background: transparent;
+
+  .navbar__menu button,
+  .navLink {
+    color: $white;
+  }
+
+  .logoCircle {
+    border-color: $white;
+  }
+}
+
+/* ===============================
+   AFTER HERO (SOLID)
+================================ */
+.navbar--solid {
+  background: $cream;
+
+  .navbar__menu button,
+  .navLink {
+    color: #2c2c2c;
+  }
+
+  .logoCircle {
+    border-color: #2c2c2c;
+  }
+  .navbar__btn {
+  background: #2c2c2c;
+  color: $white;
+}
+}
+
+/* ===============================
+   HOVER STATE (BOTH CONDITIONS)
+================================ */
+.navbar:hover {
+  .navbar__menu button,
+  .navLink {
+    color: #2c2c2c;
+  }
+
+  .logoCircle {
+    border-color: #2c2c2c;
+  }
+}
+
+/* ===============================
+   LOGO
+================================ */
+.logoCircle {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  border: 1px solid;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ===============================
+   MENU
+================================ */
+.navbar__menu {
+  display: flex;
+  gap: 35px;
+
+  button {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 13px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    position: relative;
+    transition: color 0.3s ease;
+
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -8px;
+      width: 0%;
+      height: 2px;
+      background: #2c2c2c;
+      transition: width 0.3s ease;
+    }
+
+    &:hover::after {
+      width: 100%;
+    }
+  }
+}
+
+/* ===============================
+   RIGHT SIDE
+================================ */
+.navbar__right {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.navbar__btn {
+  background: $white;
+  color: #2c2c2c;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 999px;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+}
+
+/* button invert on hover */
+.navbar:hover .navbar__btn {
+  background: #2c2c2c;
+  color: $white;
+}
+
+.navLink {
+  font-size: 12px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: color 0.3s ease;
+}
+
+
+/* ===============================
+   MEGA MENU
+================================ */
+
+.navbar__hoverArea {
+  position: relative;
+}
+
+.megaMenu {
+  // position: absolute;
+  // top: 100%;
+  // left: 0;
+  width: 100%;
+  background: $cream;
+
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.6s ease;
+  z-index: 1;
+}
+
+.megaMenu--show {
+  max-height: 460px;
+}
+.megaMenu__inner {
+  max-width: $maxWidth;
+  margin: 0 auto;
+  padding: 50px 20px;
+
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 60px;
+}
+
+/* ===============================
+   LEFT COLUMN (TEXT LINKS)
+================================ */
+
+.menu__left {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+
+  a {
+    font-size: 18px;
+    color: rgba(0, 0, 0, 0.65);
+    text-decoration: none;
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: rgba(0, 0, 0, 1);
+    }
+  }
+}
+
+/* ===============================
+   RIGHT COLUMN (CARDS)
+================================ */
+
+.megaMenu__right {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+}
+
+/* card */
+.megaCard {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  cursor: pointer;
+
+  img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    display: block;
+    border-radius: 16px;
+    transition: transform 0.5s ease;
+  }
+
+  &:hover img {
+    transform: scale(1.05);
+  }
+
+  p {
+    position: absolute;
+    left: 18px;
+    bottom: 18px;
+    color: white;
+    font-size: 22px;
+    font-weight: 500;
+  }
+}

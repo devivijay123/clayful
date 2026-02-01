@@ -1,0 +1,50 @@
+// @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  font-family: "Inter", sans-serif;
+ 
+}
+
+
+/* Colors */
+$yellow: #ff9f43;
+$light-yellow: #ffbc7b;
+$blue: #0557a2;
+$white: #ffffff;
+$light-blue: #4C5F7D ;
+$border: #f2f3f5;
+$input-border: #e9e9eb;
+$heading:  #2A3B49;
+$sub-heading: #64748b;
+$black: #000000;
+$green: #28c76f;
+$light-green: #00bf1e;
+$lite-pink: #fff1f1;
+$pink: #f96e6f;
+$lite-black: #696f77;
+$lite-gray: #2c8d3c;
+$lite-brown: #ff9f43;
+$placeHolder: #94a3b8;
+$link: #467fff;
+$table-hover: #fafbfc;
+$muted: rgba(255, 255, 255, 0.75);
+$cream: #faf4ed;
+$overlay: rgba(0, 0, 0, 0.55);
+$maxWidth: 1350px;
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+
+video::-webkit-media-controls {
+  display: none !important;
+}
+
+video::-webkit-media-controls-enclosure {
+  display: none !important;
+}

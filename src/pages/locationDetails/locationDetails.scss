@@ -1,0 +1,112 @@
+@use "@/globalStyles/app.scss" as *;
+
+.locationDetails {
+  background: $cream;
+  padding: 120px 20px 80px; // space for fixed navbar
+  min-height: 100vh;
+}
+
+/* back button */
+.backBtn {
+  background: none;
+  border: none;
+  font-size: 14px;
+  letter-spacing: 1px;
+  cursor: pointer;
+  margin-bottom: 40px;
+  color: #2c2c2c;
+  padding-left: 10%;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.locationDetails__content {
+  max-width: 1200px;
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 80px;
+  align-items: start;
+}
+
+/* image section */
+.locationDetails__image {
+  border-radius: 18px;
+  overflow: hidden;
+
+  img {
+    width: 60%;
+    height: auto;
+    display: block;
+    border-radius: 18px;
+  }
+}
+
+/* info section */
+.locationDetails__info {
+  h1 {
+    font-size: 48px;
+    font-weight: 500;
+    margin-bottom: 20px;
+    color: #2c2c2c;
+  }
+
+  p {
+    font-size: 16px;
+    line-height: 1.7;
+    color: #4a4a4a;
+    margin-bottom: 14px;
+  }
+
+  h4 {
+    margin-top: 32px;
+    margin-bottom: 10px;
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #2c2c2c;
+  }
+}
+
+/* book button */
+.bookBtn {
+  margin-top: 40px;
+  background: #3f3a36;
+  color: white;
+  border: none;
+  padding: 16px 32px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  cursor: pointer;
+
+  &:hover {
+    background: #2c2c2c;
+  }
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 900px) {
+  .locationDetails__content {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .locationDetails__info h1 {
+    font-size: 36px;
+  }
+}
+
+@media (max-width: 500px) {
+  .locationDetails {
+    padding-top: 100px;
+  }
+
+  .locationDetails__info h1 {
+    font-size: 30px;
+  }
+}
