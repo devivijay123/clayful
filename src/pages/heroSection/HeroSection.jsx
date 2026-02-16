@@ -14,17 +14,25 @@ const slides = [
   {
     type: "image",
     src: "//creative-space.dk/cdn/shop/files/IMG_1524_2.jpg?crop=center&height=3780&v=1763394600&width=3024// ",
-    title: "Pick up day",
+    title: "Café",
     subtitle:
-      "We're treating all the little artists and their grandparents to a cup of hot cocoa on the house.\n\nCome by and swing your brushes together!",
+      "Sip Clay Conversation",
     buttonText: "BOOK A TABLE",
   },
   {
     type: "image",
     src: "//creative-space.dk/cdn/shop/files/IMG_5608.jpg?crop=center&height=1290&v=1765204820&width=2279",
-    title: "Masterclasses",
+    title: "BYOB Night",
     subtitle:
-      "Join our Masterclasses, where you will receive 1:1 instruction in the most popular painting techniques.",
+      "An Evening of Glaze & Indulgence",
+    buttonText: "READ MORE",
+  },
+    {
+    type: "image",
+    src: "//creative-space.dk/cdn/shop/files/IMG_5608.jpg?crop=center&height=1290&v=1765204820&width=2279",
+    title: "Party",
+    subtitle:
+      "Private Creative Gatherings",
     buttonText: "READ MORE",
   },
 ];
@@ -78,7 +86,7 @@ export default function HeroSection() {
               ))}
             </p>
 
-            <button className="heroSlide__btn">{slide.buttonText}</button>
+            {/* <button className="heroSlide__btn">{slide.buttonText}</button> */}
           </div>
         </div>
       ))}

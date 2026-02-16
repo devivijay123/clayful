@@ -1,0 +1,45 @@
+.about-section {
+  background: #f7f7f5; // light grey/cream background
+  padding: 100px 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.about-container {
+  max-width: 800px;
+  text-align: center;
+}
+
+.about-logo {
+  width: 80px;
+  margin-bottom: 30px;
+}
+
+.about-title {
+  font-size: 32px;
+  letter-spacing: 3px;
+
+  margin-bottom: 40px;
+  font-weight: 600;
+}
+
+.about-text {
+  font-size: 16px;
+  line-height: 1.8;
+
+
+  p {
+    margin-bottom: 25px;
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .about-title {
+    font-size: 24px;
+  }
+
+  .about-text {
+    font-size: 14px;
+  }
+}

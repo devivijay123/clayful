@@ -7,7 +7,7 @@ import Navbar from "./components/Navbar/Navbar";
 import ProductDetails from "./pages/productDetails/ProductDetails";
 import LocationDetails from "./pages/locationDetails/LocationDetails";
 import Footer from "./components/footer/footer"
-import ConceptPage from "./components/conceptPage/conceptPage";
+import ConceptPage from "./pages/conceptPage/ConceptPage"
 
 function App() {
  

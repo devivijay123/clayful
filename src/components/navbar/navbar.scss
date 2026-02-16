@@ -1,32 +1,21 @@
 @use "@/globalStyles/app.scss" as *;
 
-/* ===============================
-   BASE NAVBAR
-================================ */
+
 .navbar {
   position: fixed;
-  top: 0;
-  left: 0;
+  // top: 0;
+  // left: 0;
   width: 100%;
   z-index: 9999;
   padding-top: 15px;
-  overflow: hidden;
-  transition: background-color 0.4s ease;
-}
-
-/* animated background layer */
-.navbar::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  height: 0%;
+  // overflow: hidden;
   background: $cream;
-  transition: height 0.6s ease;
-  z-index: 0;
-  pointer-events: none;
+  // transition: background-color 0.4s ease;
 }
 
-/* hover animation ALWAYS works */
+
+
+
 .navbar:hover::before {
   height: 100%;
 }
@@ -44,10 +33,10 @@
   align-items: center;
   justify-content: space-between;
   .logo{
-              width: 50px;
-              height: 50px;
+              width: 100%;
+              height: 15vh;
               @media(max-width: 600px){
-                width: 40%;
+                width: 100%;
               }
                 img{
                     width: 100%;
@@ -64,68 +53,9 @@
   background: $cream;
 }
 
-/* ===============================
-   HERO STATE (TRANSPARENT)
-================================ */
-.navbar--transparent {
-  background: transparent;
 
-  .navbar__menu button,
-  .navLink {
-    color: $white;
-  }
 
-  .logoCircle {
-    border-color: $white;
-  }
-}
 
-/* ===============================
-   AFTER HERO (SOLID)
-================================ */
-.navbar--solid {
-  background: $cream;
-
-  .navbar__menu button,
-  .navLink {
-    color: #2c2c2c;
-  }
-
-  .logoCircle {
-    border-color: #2c2c2c;
-  }
-  .navbar__btn {
-  background: #2c2c2c;
-  color: $white;
-}
-}
-
-/* ===============================
-   HOVER STATE (BOTH CONDITIONS)
-================================ */
-.navbar:hover {
-  .navbar__menu button,
-  .navLink {
-    color: #2c2c2c;
-  }
-
-  .logoCircle {
-    border-color: #2c2c2c;
-  }
-}
-
-/* ===============================
-   LOGO
-================================ */
-.logoCircle {
-  width: 45px;
-  height: 45px;
-  border-radius: 50%;
-  border: 1px solid;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
 
 /* ===============================
    MENU
@@ -206,31 +136,7 @@
   position: relative;
 }
 
-.megaMenu {
-  // position: absolute;
-  // top: 100%;
-  // left: 0;
-  width: 100%;
-  background: $cream;
 
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.6s ease;
-  z-index: 1;
-}
-
-.megaMenu--show {
-  max-height: 460px;
-}
-.megaMenu__inner {
-  max-width: $maxWidth;
-  margin: 0 auto;
-  padding: 50px 20px;
-
-  display: grid;
-  grid-template-columns: 300px 1fr;
-  gap: 60px;
-}
 
 /* ===============================
    LEFT COLUMN (TEXT LINKS)
@@ -291,4 +197,130 @@
     font-size: 22px;
     font-weight: 500;
   }
+}
+/* ===============================
+   HAMBURGER
+================================ */
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 6px;
+  cursor: pointer;
+
+  span {
+    width: 25px;
+    height: 2px;
+    background: #2c2c2c;
+    transition: 0.3s ease;
+  }
+}
+
+/* animate to X */
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translateY(11px);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translateY(-11px);
+}
+
+/* ===============================
+   MOBILE MENU
+================================ */
+
+.mobileMenu {
+  position: fixed;
+  // top: 0;
+  right: -100%;
+  width: 70%;
+  height: 100vh;
+  background: $cream;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding: 100px 40px;
+  transition: right 0.4s ease;
+  z-index: 999;
+  button {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 13px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    position: relative;
+    transition: color 0.3s ease;
+
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -8px;
+      width: 0%;
+      height: 2px;
+      background: #2c2c2c;
+      transition: width 0.3s ease;
+    }
+
+    // &:hover::after {
+    //   width: 100%;
+    // }
+    .navbar:hover .navbar__btn {
+  background: #2c2c2c;
+  color: $white;
+}
+  }
+
+.navbar__btn {
+  background: $white;
+  color: #2c2c2c;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 999px;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+}
+
+/* button invert on hover */
+.navbar:hover .navbar__btn {
+  background: #2c2c2c;
+  color: $white;
+}
+
+.navLink {
+  font-size: 12px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: color 0.3s ease;
+}
+
+}
+
+.mobileMenu.show {
+  right: 0;
+}
+
+/* ===============================
+   RESPONSIVE
+================================ */
+
+@media (max-width: 992px) {
+
+  .desktop {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+  
 }

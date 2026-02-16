@@ -1,0 +1,39 @@
+.testimonials-section {
+  background: #f6f6f4;
+  padding: 120px 20px;
+  text-align: center;
+}
+
+.testimonials-container {
+  max-width: 1200px;
+  margin: auto;
+}
+
+.icon {
+  width: 80px;
+  margin-bottom: 30px;
+}
+
+.testimonial_title {
+  font-size: 32px;
+  letter-spacing: 4px;
+  margin-bottom: 80px;
+  font-weight: 600;
+}
+
+.reviews {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+
+
+/* Responsive */
+@media (max-width: 900px) {
+  .reviews {
+    flex-direction: column;
+  }
+
+ 
+}
